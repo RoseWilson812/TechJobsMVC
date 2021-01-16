@@ -32,6 +32,7 @@ namespace TechJobsMVC.Data
             LoadData();
 
             List<Job> jobs = new List<Job>();
+            
 
             if (value.ToLower().Equals("all"))
             {
