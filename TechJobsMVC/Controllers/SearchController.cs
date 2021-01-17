@@ -18,12 +18,13 @@ namespace TechJobsMVC.Controllers
             List<Job> jobs = new List<Job>();
             ViewBag.jobs = jobs;
             ViewBag.columns = ListController.ColumnChoices;
+            ViewBag.searchType = null;
+            ViewBag.searchTerm = null;
             return View();
         }
 
         // TODO #3: Create an action method to process a search request and render the updated search view.
         [HttpPost]
-        
         public IActionResult Results(string searchType, string searchTerm)
         {
             List<Job> jobs;
@@ -38,6 +39,9 @@ namespace TechJobsMVC.Controllers
             }
             ViewBag.jobs = jobs;
             ViewBag.columns = ListController.ColumnChoices;
+            ViewBag.searchType = searchType;
+            ViewBag.searchTerm = searchTerm;
+
 
             return View("Index");
            
